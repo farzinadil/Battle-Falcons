@@ -1,4 +1,4 @@
-**
+/**
  * Created by farzinadil on 10/29/19.
  */
 import javax.swing.*;
@@ -115,6 +115,41 @@ public class Main {
             }
         });
 
+        button2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("button 2 pressed");
+            }
+        });
+
+        button3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("button 3 pressed");
+            }
+        });
+
+        button4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("button 4 pressed");
+            }
+        });
+
+        button5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("button 5 pressed");
+            }
+        });
+
+        button6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("button 6 pressed");
+            }
+        });
+
 
 
 
@@ -132,9 +167,9 @@ public class Main {
     }
     public void Button(JPanel panel, JButton button){
         button.setPreferredSize( new Dimension((int)(screenSize.width*0.1), (int)(screenSize.height*0.2)));
-        //button.setOpaque(false);
-        //button.setContentAreaFilled(false);
-        //button.setBorderPainted(false);
+        button.setOpaque(false);
+        button.setContentAreaFilled(false);
+        button.setBorderPainted(false);
         panel.add(button);
         button.setVisible(true);
 
@@ -148,4 +183,3 @@ public class Main {
         new Main();
     }
 }
-
