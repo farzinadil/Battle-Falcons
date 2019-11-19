@@ -1,8 +1,10 @@
-/**
+**
  * Created by farzinadil on 10/29/19.
  */
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 public class Main {
@@ -106,6 +108,14 @@ public class Main {
         Button(rect17,button6);
 
 
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("button 1 pressed");
+            }
+        });
+
+
 
 
 
@@ -138,3 +148,4 @@ public class Main {
         new Main();
     }
 }
+
