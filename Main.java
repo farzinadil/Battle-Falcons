@@ -1,7 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 
-
+//ImageIcon myImage = new ImageIcon("images/myImage.jpg");
+//JButton button = new JButton(myImage);
 public class Main {
 
     JFrame frame;
