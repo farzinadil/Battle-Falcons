@@ -1,6 +1,3 @@
-/**
- * Created by farzinadil on 10/29/19.
- */
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,6 +5,13 @@ import java.awt.*;
 public class Main {
 
     JFrame frame;
+    JButton button1;
+    JButton button2;
+    JButton button3;
+    JButton button4;
+    JButton button5;
+    JButton button6;
+
 
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -79,6 +83,29 @@ public class Main {
         draw(rect17, (int)(screenSize.width*0.7875),(int)(screenSize.height*0.795),(int)(screenSize.width*0.1),(int)(screenSize.height*0.2));
 
 
+        button1 = new JButton();
+        Button(rect12,button1);
+
+
+
+        button2 = new JButton();
+        Button(rect13,button2);
+
+        button3 = new JButton();
+        Button(rect14,button3);
+
+        button4 = new JButton();
+        Button(rect15,button4);
+
+        button5 = new JButton();
+        Button(rect16,button5);
+
+        button6 = new JButton();
+        Button(rect17,button6);
+
+
+
+
 
 
     }
@@ -86,6 +113,16 @@ public class Main {
         square.setBackground(Color.gray);
         square.setBounds(x,y,z,w);
         frame.add(square);
+
+
+    }
+    public void Button(JPanel panel, JButton button){
+        button.setPreferredSize( new Dimension((int)(screenSize.width*0.1), (int)(screenSize.height*0.2)));
+        button.setOpaque(false);
+        button.setContentAreaFilled(false);
+        button.setBorderPainted(false);
+        panel.add(button);
+        button.setVisible(true);
 
 
     }
