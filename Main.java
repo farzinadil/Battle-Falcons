@@ -1,8 +1,10 @@
+/**
+ * Created by farzinadil on 10/29/19.
+ */
 import javax.swing.*;
 import java.awt.*;
 
-//ImageIcon myImage = new ImageIcon("images/myImage.jpg");
-//JButton button = new JButton(myImage);
+
 public class Main {
 
     JFrame frame;
@@ -84,10 +86,9 @@ public class Main {
         draw(rect17, (int)(screenSize.width*0.7875),(int)(screenSize.height*0.795),(int)(screenSize.width*0.1),(int)(screenSize.height*0.2));
 
 
+        //Buttons for Cards (Left is button 1, right is button 2)
         button1 = new JButton();
         Button(rect12,button1);
-
-
 
         button2 = new JButton();
         Button(rect13,button2);
@@ -109,6 +110,8 @@ public class Main {
 
 
 
+
+
     }
     public void draw(JPanel square, int x, int y, int z, int w){
         square.setBackground(Color.gray);
@@ -119,9 +122,9 @@ public class Main {
     }
     public void Button(JPanel panel, JButton button){
         button.setPreferredSize( new Dimension((int)(screenSize.width*0.1), (int)(screenSize.height*0.2)));
-        button.setOpaque(false);
-        button.setContentAreaFilled(false);
-        button.setBorderPainted(false);
+        //button.setOpaque(false);
+        //button.setContentAreaFilled(false);
+        //button.setBorderPainted(false);
         panel.add(button);
         button.setVisible(true);
 
