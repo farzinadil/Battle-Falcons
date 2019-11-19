@@ -1,4 +1,4 @@
-/**
+
  * Created by farzinadil on 10/29/19.
  */
 import javax.swing.*;
@@ -46,7 +46,7 @@ public class Main {
         JPanel rect5 = new JPanel();
         draw(rect5, (int)(screenSize.width*0.72),(int)(screenSize.height*0.265),(int)(screenSize.width*0.1),(int)(screenSize.height*0.2));
 
-        //Middle Row
+        //3rd Row
         JPanel rect18 = new JPanel();
         draw(rect18, (int)(screenSize.width*0.18),(int)(screenSize.height*0.53),(int)(screenSize.width*0.1),(int)(screenSize.height*0.2));
         JPanel rect19 = new JPanel();
