@@ -1,6 +1,3 @@
-
- * Created by farzinadil on 10/29/19.
- */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -108,6 +105,7 @@ public class Main {
         Button(rect17,button6);
 
 
+
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -152,11 +150,6 @@ public class Main {
 
 
 
-
-
-
-
-
     }
     public void draw(JPanel square, int x, int y, int z, int w){
         square.setBackground(Color.gray);
@@ -167,10 +160,11 @@ public class Main {
     }
     public void Button(JPanel panel, JButton button){
         button.setPreferredSize( new Dimension((int)(screenSize.width*0.1), (int)(screenSize.height*0.2)));
+        panel.add(button);
         button.setOpaque(false);
         button.setContentAreaFilled(false);
         button.setBorderPainted(false);
-        panel.add(button);
+
         button.setVisible(true);
 
 
