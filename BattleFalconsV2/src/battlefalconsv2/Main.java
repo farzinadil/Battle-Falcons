@@ -19,6 +19,7 @@ public class Main {
     JButton button4;
     JButton button5;
     JButton button6;
+    JButton endTurn;
     
     JButton[] buttonArray = new JButton[6];
     JPanel[] playerLabels = new JPanel[5];
@@ -33,10 +34,11 @@ public class Main {
 
 
     Main(){
+        Color Casino = new Color(10,100,0);
         frame = new JFrame();
         frame.setLayout(null);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        frame.getContentPane().setBackground(Color.white);
+        frame.getContentPane().setBackground(Casino);
         frame.setTitle("Battle Falcons");
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -96,11 +98,18 @@ public class Main {
         JPanel rect17 = new JPanel();
         draw(rect17, (int)(screenSize.width*0.7875),(int)(screenSize.height*0.795),(int)(screenSize.width*0.1),(int)(screenSize.height*0.2));
         
+        JPanel Text = new JPanel();
+        draw(Text,(int)(screenSize.width*0.045),(int)(screenSize.height*0.29),(int)(screenSize.width*0.1),(int)(screenSize.height*0.4));
+        Text.setBackground(Color.LIGHT_GRAY);
+        
         JLabel piclabel = new JLabel(al);
         rect1.add(piclabel);
         //rect1.remove(piclabel);
         
-        
+        endTurn = new JButton("End Turn");
+        frame.add(endTurn);
+        endTurn.setBounds((int)(screenSize.width*0.85),(int)(screenSize.height*0.478),(int)(screenSize.width*0.09),(int)(screenSize.height*0.04));
+        endTurn.setVisible(true);
         
         playerLabels[0] = rect18;
         playerLabels[1] = rect19;
