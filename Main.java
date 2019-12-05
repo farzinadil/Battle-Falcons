@@ -34,9 +34,6 @@ public class Main {
     JPanel[] enemyLabels = new JPanel[5];
     JPanel[] enemyHandLabels = new JPanel[6];
 
-    //String newString = "src/PNG/al.png";
-    //Icon al = new ImageIcon(newString);
-
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
 
@@ -104,6 +101,33 @@ public class Main {
         JPanel rect17 = new JPanel();
         draw(rect17, (int)(screenSize.width*0.7875),(int)(screenSize.height*0.795),(int)(screenSize.width*0.1),(int)(screenSize.height*0.2));
 
+        //JPanel PlayerHealthPanel = new JPanel();
+        //draw(PlayerHealthPanel, (int)(screenSize.width*0.85),(int)(screenSize.height*0.478),(int)(screenSize.width*0.09),(int)(screenSize.height*0.04));
+
+        JLabel PlayerHealth = new JLabel("30");
+        JLabel PlayerMana = new JLabel("40");
+        JLabel OpponentHealth = new JLabel("60");
+        JLabel OpponentMana = new JLabel("70");
+
+        PlayerHealth.setBounds((int)(screenSize.width*0.88),(int)(screenSize.height*0.4),(int)(screenSize.width*0.09),(int)(screenSize.height*0.04));
+        frame.add(PlayerHealth);
+        PlayerHealth.setVisible(true);
+
+        PlayerMana.setBounds((int)(screenSize.width*0.91),(int)(screenSize.height*0.4),(int)(screenSize.width*0.09),(int)(screenSize.height*0.04));
+        frame.add(PlayerMana);
+        PlayerMana.setVisible(true);
+
+        OpponentHealth.setBounds((int)(screenSize.width*0.88),(int)(screenSize.height*0.55),(int)(screenSize.width*0.09),(int)(screenSize.height*0.04));
+        frame.add(OpponentHealth);
+        OpponentHealth.setVisible(true);
+
+        OpponentMana.setBounds((int)(screenSize.width*0.91),(int)(screenSize.height*0.55),(int)(screenSize.width*0.09),(int)(screenSize.height*0.04));
+        frame.add(OpponentMana);
+        OpponentMana.setVisible(true);
+
+        //To udate : PlayerHealth.setText(""+int);
+
+
 
         JPanel Text = new JPanel();
         draw(Text,(int)(screenSize.width*0.045),(int)(screenSize.height*0.29),(int)(screenSize.width*0.1),(int)(screenSize.height*0.4));
@@ -121,8 +145,6 @@ public class Main {
         stringquee.add("Game Started");
 
         updateGameLog(stringquee,logLabel,"Player Health 30");
-
-
 
 
         endTurn = new JButton("End Turn");
@@ -181,8 +203,8 @@ public class Main {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                updateGameLog( stringquee, logLabel,"button 1 pressed" );
                 System.out.println("button 1 pressed");
+                updateGameLog( stringquee, logLabel,"button 1 pressed" );
                 playerHandToField(0);
             }
         });
@@ -227,7 +249,7 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("button 6 pressed");
-                updateGameLog( stringquee, logLabel,"button 6 pressed" );
+                updateGameLog( stringquee, logLabel, "button 6 pressed" );
                 playerHandToField(5);
             }
         });
@@ -275,21 +297,6 @@ public class Main {
         button.setVisible(true);
     }
 
-
-    /*public void refreshHand(LinkedList <Card> hand, LinkedList <Card> battlefield) {
-        for(int i = 0; i < buttonArray.length; i++) {
-            try {
-                buttonArray[i].setIcon(new ImageIcon(hand.get(i).getImage()));
-            }
-
-            catch(Exception e) {
-                if (battlefield.size() <= 5) {
-                    buttonArray[i].setIcon(null);
-                }
-            }
-        }
-    }*/
-
     public void updateGameLog (Queue<String> stringquee, JTextArea gameLabel, String newentry)
     {
         String x ="";
@@ -303,22 +310,12 @@ public class Main {
     }
 
     private void debugDisplay() {
-        if(playerHand.size() == 0) {
-            playerHand.add(question);
-            displayPlayerHand();
+        Card temp = playerHand.get(0);
+        playerHand.remove(0);
+        displayPlayerHand();
 
-            playerHand.remove(question);
-            displayPlayerHand();
-        }
-
-        else {
-            Card temp = playerHand.get(0);
-            playerHand.remove(0);
-            displayPlayerHand();
-
-            playerHand.add(0, temp);
-            displayPlayerHand();
-        }
+        playerHand.add(0, temp);
+        displayPlayerHand();
     }
 
     private void playerHandToField(int index) {
@@ -351,39 +348,6 @@ public class Main {
             buttonArray[i].setIcon(null);
         }
     }
-        /*
-        for(int i = 0; i < buttonArray.length; i++) {
-            try {
-                buttonArray[i].setIcon(new ImageIcon(playerHand.get(i).getImage()));
-            }
-
-            catch(Exception e) {
-                if (playerField.size() <= 5) {
-                    buttonArray[i].setIcon(null);
-                }
-            }
-        }*/
-
-    /*private void handToField(int index, LinkedList <Card> hand, LinkedList <Card> battlefield, JPanel[] lables) {
-        try {
-            if (battlefield.size() <= 5) {
-                battlefield.add(hand.get(index));
-
-                setLabel(lables, battlefield);
-
-                hand.remove(index);
-                refreshHand(hand, battlefield);
-            }
-
-            else {
-                System.out.println("Playing field is full");
-            }
-        }
-
-        catch(Exception e) {
-            System.out.println("No card in hand");
-        }
-    }*/
 
     private void displayEnemyHand() {
         for(int i = 0; i < enemyHand.size(); i++) {
@@ -393,6 +357,7 @@ public class Main {
 
         for(int i = enemyHand.size(); i < enemyHandLabels.length; i++) {
             enemyHandLabels[i].removeAll();
+            enemyHandLabels[i].add(new JLabel(new ImageIcon(blank.getImage())));
         }
     }
 
@@ -408,46 +373,7 @@ public class Main {
         }
     }
 
-    /*private void displayPlayerLabels() {
-        for(int i = 0; i < playerField.size(); i++) {
-            playerLabels[i].removeAll();
-            playerLabels[i].add(new JLabel(new ImageIcon(playerField.get(i).getImage())));
-        }
 
-        for(int i = playerField.size(); i < playerLabels.length; i++) {
-            playerLabels[i].removeAll();
-        }
-    }
-
-    private void setLabel(JPanel[] labelField, LinkedList <Card> battleField) {
-        JLabel label = new JLabel(new ImageIcon(battleField.getLast().getImage()));
-
-        switch (battleField.size() - 1) {
-            case 0:
-                labelField[0].add(label);
-                break;
-
-            case 1:
-                labelField[1].add(label);
-                break;
-
-            case 2:
-                labelField[2].add(label);
-                break;
-
-            case 3:
-                labelField[3].add(label);
-                break;
-
-            case 4:
-                labelField[4].add(label);
-                break;
-
-            default:
-                System.out.println("No cards in hand");
-        }
-    }
-    */
     private void enemyTurn() {
         for(int i = 0; i < enemyHand.size(); i++) {
             if(enemyField.size() < 5) {
@@ -465,11 +391,11 @@ public class Main {
 
     private void battlePhase() {
         if (playerField.size() < enemyField.size()) {
-            cardBattle(playerField, enemyField, playerGrave, enemyGrave);
+            cardBattle(playerField, enemyField, playerGrave, enemyGrave, player, enemy);
         }
 
         else {
-            cardBattle(enemyField, playerField, enemyGrave, playerGrave);
+            cardBattle(enemyField, playerField, enemyGrave, playerGrave, enemy, player);
         }
 
         for(int i = 0; i < playerGrave.size(); i++) {
@@ -488,7 +414,7 @@ public class Main {
         displayEnemyHand();
     }
 
-    private void cardBattle(LinkedList <Card> smallerField, LinkedList <Card> biggerField, LinkedList <Card> smallerGrave, LinkedList <Card> biggerGrave) {
+    private void cardBattle(LinkedList <Card> smallerField, LinkedList <Card> biggerField, LinkedList <Card> smallerGrave, LinkedList <Card> biggerGrave, Player smallerPlayer, Player biggerPlayer) {
         for(int i = 0; i < smallerField.size(); i++) {
             System.out.println(smallerField.get(i).attacks(biggerField.get(i)));
 
@@ -507,8 +433,14 @@ public class Main {
         }
 
         for(int i = smallerField.size(); i < biggerField.size(); i++) {
-            System.out.println(biggerField.get(i).getCardName() +
-                    " attacks Player");
+            int damage = biggerField.get(i).attacks(smallerPlayer);
+
+            System.out.printf(
+                    "%s attacks %s for %d damage\n",
+                    biggerField.get(i).getCardName(),
+                    smallerPlayer.getPlayerName(),
+                    damage
+            );
         }
     }
 
@@ -519,6 +451,12 @@ public class Main {
 
         intialDraw(playerHand, playerDeck);
         intialDraw(enemyHand, enemyDeck);
+
+        player.setHealth(30);
+        enemy.setHealth(30);
+
+        System.out.println(player);
+        System.out.println(enemy);
 
         new Main();
     }
