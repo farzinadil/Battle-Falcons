@@ -462,7 +462,7 @@ public class Main {
         System.out.println(enemy);
 
 
-        Menu start = new Menu();
+       new Menu();
 
 
 
