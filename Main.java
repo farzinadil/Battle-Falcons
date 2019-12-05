@@ -469,3 +469,28 @@ public class Main {
        
     }
 }
+*/
+        private void endgame() {
+        if(checkExodia()) {
+            ImageIcon zodiaicon = new ImageIcon("src/PNG/ExodiaWin.png");
+            //JOptionPane.showMessageDialog(null, "Birdzodia Obliterates");
+            JOptionPane.showMessageDialog(null,"","",JOptionPane.INFORMATION_MESSAGE,zodiaicon);
+        }
+
+        else if(player.getHealth() <= 0) {
+            ImageIcon loseicon = new ImageIcon("src/PNG/Lose.png");
+            //JOptionPane.showMessageDialog(null, "Game Over\nYou Lose");
+            JOptionPane.showMessageDialog(null,"","",JOptionPane.INFORMATION_MESSAGE,loseicon);
+        }
+
+        else {
+            ImageIcon winicon = new ImageIcon("src/PNG/Win.png");
+            //JOptionPane.showMessageDialog(null, "Congratulations!\nYou Won");
+            JOptionPane.showMessageDialog(null,"","",JOptionPane.INFORMATION_MESSAGE,winicon);
+
+
+        }
+
+        frame.dispose();
+    }
+*/
