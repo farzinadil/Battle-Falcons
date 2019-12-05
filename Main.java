@@ -134,6 +134,7 @@ public class Main {
         Text.setBackground(Color.WHITE);
         JTextArea logLabel = new JTextArea();
         logLabel.setEditable(false);
+        logLabel.setLineWrap(true);
         Text.add(logLabel);
         String x = "";
         Queue<String> stringquee = new LinkedList<>();
@@ -277,6 +278,7 @@ public class Main {
         enemyTurn();
         displayPlayerHand();
     }
+
 
 
     public void draw(JPanel square, int x, int y, int z, int w) {
@@ -445,6 +447,7 @@ public class Main {
     }
 
 
+
     public static void main (String[]args) {
         deckShuffle(playerDeck);
         deckShuffle(enemyDeck);
@@ -458,6 +461,11 @@ public class Main {
         System.out.println(player);
         System.out.println(enemy);
 
-        new Main();
+
+        Menu start = new Menu();
+
+
+
+       
     }
 }
