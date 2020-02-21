@@ -29,7 +29,6 @@ public class Board {
     JTextArea logLabel = new JTextArea();
     Queue<String> stringQueue = new LinkedList<>();
 
-    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
     JLabel PlayerHealth = new JLabel("HP: " + player.getHealth());
     JLabel PlayerMana = new JLabel("MP: " + player.getMana());
@@ -40,35 +39,46 @@ public class Board {
     Color Casino = new Color(10, 100, 0);
 
 
+    java.awt.Rectangle bounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+
+
+
+
+
     Board() {
+
 
         frame = new JFrame();
         frame.setLayout(null);
-        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+        frame.setSize(bounds.width,bounds.height);
+
+        frame.setVisible(true);
+
         frame.getContentPane().setBackground(Casino);
         frame.setTitle("Battle Falcons");
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        OpponentHealth.setBounds((int) (screenSize.width * 0.88), (int) (screenSize.height * 0.4), (int) (screenSize.width * 0.09), (int) (screenSize.height * 0.04));
+        OpponentHealth.setBounds((int) (bounds.width * 0.88), (int) (bounds.height * 0.4), (int) (bounds.width * 0.09), (int) (bounds.height * 0.04));
         frame.add(OpponentHealth);
         OpponentHealth.setFont(new Font("Serif", Font.PLAIN, 20));
         OpponentHealth.setForeground(Color.white);
         OpponentHealth.setVisible(true);
 
-        OpponentMana.setBounds((int) (screenSize.width * 0.93), (int) (screenSize.height * 0.4), (int) (screenSize.width * 0.09), (int) (screenSize.height * 0.04));
+        OpponentMana.setBounds((int) (bounds.width * 0.93), (int) (bounds.height * 0.4), (int) (bounds.width * 0.09), (int) (bounds.height * 0.04));
         frame.add(OpponentMana);
         OpponentMana.setFont(new Font("Serif", Font.PLAIN, 20));
         OpponentMana.setForeground(Color.white);
         OpponentMana.setVisible(true);
 
-        PlayerHealth.setBounds((int) (screenSize.width * 0.88), (int) (screenSize.height * 0.55), (int) (screenSize.width * 0.09), (int) (screenSize.height * 0.04));
+        PlayerHealth.setBounds((int) (bounds.width * 0.88), (int) (bounds.height * 0.55), (int) (bounds.width * 0.09), (int) (bounds.height * 0.04));
         frame.add(PlayerHealth);
         PlayerHealth.setFont(new Font("Serif", Font.PLAIN, 20));
         PlayerHealth.setForeground(Color.white);
         PlayerHealth.setVisible(true);
 
-        PlayerMana.setBounds((int) (screenSize.width * 0.93), (int) (screenSize.height * 0.55), (int) (screenSize.width * 0.09), (int) (screenSize.height * 0.04));
+        PlayerMana.setBounds((int) (bounds.width * 0.93), (int) (bounds.height * 0.55), (int) (bounds.width * 0.09), (int) (bounds.height * 0.04));
         frame.add(PlayerMana);
         PlayerMana.setFont(new Font("Serif", Font.PLAIN, 20));
         PlayerMana.setForeground(Color.white);
@@ -77,62 +87,62 @@ public class Board {
 
         //Second Row
         JPanel rect1 = new JPanel();
-        draw(rect1, (int) (screenSize.width * 0.18), (int) (screenSize.height * 0.265), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect1, (int) (bounds.width * 0.18), (int) (bounds.height * 0.265), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect2 = new JPanel();
-        draw(rect2, (int) (screenSize.width * 0.315), (int) (screenSize.height * 0.265), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect2, (int) (bounds.width * 0.315), (int) (bounds.height * 0.265), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect3 = new JPanel();
-        draw(rect3, (int) (screenSize.width * 0.45), (int) (screenSize.height * 0.265), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect3, (int) (bounds.width * 0.45), (int) (bounds.height * 0.265), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect4 = new JPanel();
-        draw(rect4, (int) (screenSize.width * 0.585), (int) (screenSize.height * 0.265), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect4, (int) (bounds.width * 0.585), (int) (bounds.height * 0.265), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect5 = new JPanel();
-        draw(rect5, (int) (screenSize.width * 0.72), (int) (screenSize.height * 0.265), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect5, (int) (bounds.width * 0.72), (int) (bounds.height * 0.265), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
 
         //3rd Row
         JPanel rect18 = new JPanel();
-        draw(rect18, (int) (screenSize.width * 0.18), (int) (screenSize.height * 0.53), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect18, (int) (bounds.width * 0.18), (int) (bounds.height * 0.53), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect19 = new JPanel();
-        draw(rect19, (int) (screenSize.width * 0.315), (int) (screenSize.height * 0.53), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect19, (int) (bounds.width * 0.315), (int) (bounds.height * 0.53), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect20 = new JPanel();
-        draw(rect20, (int) (screenSize.width * 0.45), (int) (screenSize.height * 0.53), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect20, (int) (bounds.width * 0.45), (int) (bounds.height * 0.53), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect21 = new JPanel();
-        draw(rect21, (int) (screenSize.width * 0.585), (int) (screenSize.height * 0.53), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect21, (int) (bounds.width * 0.585), (int) (bounds.height * 0.53), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect22 = new JPanel();
-        draw(rect22, (int) (screenSize.width * 0.72), (int) (screenSize.height * 0.53), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect22, (int) (bounds.width * 0.72), (int) (bounds.height * 0.53), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
 
 
         //Top Row
         JPanel rect6 = new JPanel();
-        draw(rect6, (int) (screenSize.width * 0.1125), 0, (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect6, (int) (bounds.width * 0.1125), 0, (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect7 = new JPanel();
-        draw(rect7, (int) (screenSize.width * 0.2475), 0, (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect7, (int) (bounds.width * 0.2475), 0, (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect8 = new JPanel();
-        draw(rect8, (int) (screenSize.width * 0.3825), 0, (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect8, (int) (bounds.width * 0.3825), 0, (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect9 = new JPanel();
-        draw(rect9, (int) (screenSize.width * 0.5175), 0, (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect9, (int) (bounds.width * 0.5175), 0, (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect10 = new JPanel();
-        draw(rect10, (int) (screenSize.width * 0.6525), 0, (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect10, (int) (bounds.width * 0.6525), 0, (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect11 = new JPanel();
-        draw(rect11, (int) (screenSize.width * 0.7875), 0, (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect11, (int) (bounds.width * 0.7875), 0, (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
 
         //Bottom Row
         JPanel rect12 = new JPanel();
-        draw(rect12, (int) (screenSize.width * 0.1125), (int) (screenSize.height * 0.795), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect12, (int) (bounds.width * 0.1125), (int) (bounds.height * 0.795), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect13 = new JPanel();
-        draw(rect13, (int) (screenSize.width * 0.2475), (int) (screenSize.height * 0.795), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect13, (int) (bounds.width * 0.2475), (int) (bounds.height * 0.795), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect14 = new JPanel();
-        draw(rect14, (int) (screenSize.width * 0.3825), (int) (screenSize.height * 0.795), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect14, (int) (bounds.width * 0.3825), (int) (bounds.height * 0.795), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect15 = new JPanel();
-        draw(rect15, (int) (screenSize.width * 0.5175), (int) (screenSize.height * 0.795), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect15, (int) (bounds.width * 0.5175), (int) (bounds.height * 0.795), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect16 = new JPanel();
-        draw(rect16, (int) (screenSize.width * 0.6525), (int) (screenSize.height * 0.795), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect16, (int) (bounds.width * 0.6525), (int) (bounds.height * 0.795), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
         JPanel rect17 = new JPanel();
-        draw(rect17, (int) (screenSize.width * 0.7875), (int) (screenSize.height * 0.795), (int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2));
+        draw(rect17, (int) (bounds.width * 0.7875), (int) (bounds.height * 0.795), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
 
 
         logLabel.setEditable(false);
         logLabel.setLineWrap(true);
         logLabel.setMargin(new Insets(0, 0, 0, 0));
-        logLabel.setBounds((int) (screenSize.width * 0.04), (int) (screenSize.height * 0.24), (int) (screenSize.width * 0.12), (int) (screenSize.height * 0.49));
+        logLabel.setBounds((int) (bounds.width * 0.04), (int) (bounds.height * 0.24), (int) (bounds.width * 0.12), (int) (bounds.height * 0.49));
         frame.add(logLabel);
         String x = "";
 
@@ -144,7 +154,7 @@ public class Board {
 
         endTurn = new JButton("End Turn");
         frame.add(endTurn);
-        endTurn.setBounds((int) (screenSize.width * 0.85), (int) (screenSize.height * 0.478), (int) (screenSize.width * 0.09), (int) (screenSize.height * 0.04));
+        endTurn.setBounds((int) (bounds.width * 0.85), (int) (bounds.height * 0.478), (int) (bounds.width * 0.09), (int) (bounds.height * 0.04));
         endTurn.setVisible(true);
 
         playerLabels[0] = rect18;
@@ -283,7 +293,7 @@ public class Board {
 
 
     public void Button(JPanel panel, JButton button) {
-        button.setPreferredSize(new Dimension((int) (screenSize.width * 0.1), (int) (screenSize.height * 0.2)));
+        button.setPreferredSize(new Dimension((int) (bounds.width * 0.1), (int) (bounds.height * 0.2)));
         panel.add(button);
 
         button.setOpaque(false);
