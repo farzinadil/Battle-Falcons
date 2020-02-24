@@ -48,6 +48,7 @@ public class Board {
     Board() {
 
 
+
         frame = new JFrame();
         frame.setLayout(null);
 
@@ -527,21 +528,21 @@ public class Board {
         if (checkExodia()) {
             ImageIcon zodiaicon = new ImageIcon("src/PNG/ExodiaWin.png");
             Image imagezod = zodiaicon.getImage(); // transform it
-            Image newimg = imagezod.getScaledInstance(500, 500,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+            Image newimg = imagezod.getScaledInstance( (int)(bounds.width*0.4), (int)(bounds.height*0.65),  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
             zodiaicon = new ImageIcon(newimg); // reset image icon
 
             JOptionPane.showMessageDialog(null, "", "Exodia Win!", JOptionPane.INFORMATION_MESSAGE, zodiaicon);
         } else if (player.getHealth() <= 0) {
             ImageIcon loseicon = new ImageIcon("src/PNG/Lose.png");
             Image imagelose = loseicon.getImage(); // transform it
-            Image newimg2 = imagelose.getScaledInstance(500, 500,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+            Image newimg2 = imagelose.getScaledInstance((int)(bounds.width*0.4), (int)(bounds.height*0.65),  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
             loseicon = new ImageIcon(newimg2); // reset image icon
 
             JOptionPane.showMessageDialog(null, "", "You Lose!", JOptionPane.INFORMATION_MESSAGE, loseicon);
         } else {
             ImageIcon winicon = new ImageIcon("src/PNG/Win.png");
             Image imagewin = winicon.getImage(); // transform it
-            Image newimg3 = imagewin.getScaledInstance(500, 500,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+            Image newimg3 = imagewin.getScaledInstance((int)(bounds.width*0.4), (int)(bounds.height*0.65),  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
             winicon = new ImageIcon(newimg3); // reset image icon
 
             JOptionPane.showMessageDialog(null, "", "You Win!", JOptionPane.INFORMATION_MESSAGE, winicon);
