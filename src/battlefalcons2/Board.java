@@ -1,12 +1,12 @@
 package battlefalcons2;
 
-        import javax.swing.*;
-        import java.awt.*;
-        import java.awt.event.*;
-        import javax.swing.ImageIcon;
-        import java.util.LinkedList;
-        import java.util.Queue;
-        import static battlefalcons2.CardList.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.ImageIcon;
+import java.util.LinkedList;
+import java.util.Queue;
+import static battlefalcons2.CardList.*;
 
 
 public class Board {
@@ -40,6 +40,9 @@ public class Board {
 
 
     java.awt.Rectangle bounds = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+    double height = bounds.height * 0.8;
+    double width = bounds.width * 0.8;
+
 
 
 
@@ -52,7 +55,7 @@ public class Board {
         frame = new JFrame();
         frame.setLayout(null);
 
-        frame.setSize(bounds.width,bounds.height);
+        frame.setSize((int)width,(int)height);
 
         frame.setVisible(true);
 
@@ -61,25 +64,25 @@ public class Board {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        OpponentHealth.setBounds((int) (bounds.width * 0.88), (int) (bounds.height * 0.4), (int) (bounds.width * 0.09), (int) (bounds.height * 0.04));
+        OpponentHealth.setBounds((int) (width * 0.88), (int) (height * 0.4), (int) (width * 0.09), (int) (height * 0.04));
         frame.add(OpponentHealth);
         OpponentHealth.setFont(new Font("Serif", Font.PLAIN, 20));
         OpponentHealth.setForeground(Color.white);
         OpponentHealth.setVisible(true);
 
-        OpponentMana.setBounds((int) (bounds.width * 0.93), (int) (bounds.height * 0.4), (int) (bounds.width * 0.09), (int) (bounds.height * 0.04));
+        OpponentMana.setBounds((int) (width * 0.93), (int) (height * 0.4), (int) (width * 0.09), (int) (height * 0.04));
         frame.add(OpponentMana);
         OpponentMana.setFont(new Font("Serif", Font.PLAIN, 20));
         OpponentMana.setForeground(Color.white);
         OpponentMana.setVisible(true);
 
-        PlayerHealth.setBounds((int) (bounds.width * 0.88), (int) (bounds.height * 0.55), (int) (bounds.width * 0.09), (int) (bounds.height * 0.04));
+        PlayerHealth.setBounds((int) (width * 0.88), (int) (height * 0.55), (int) (width * 0.09), (int) (height * 0.04));
         frame.add(PlayerHealth);
         PlayerHealth.setFont(new Font("Serif", Font.PLAIN, 20));
         PlayerHealth.setForeground(Color.white);
         PlayerHealth.setVisible(true);
 
-        PlayerMana.setBounds((int) (bounds.width * 0.93), (int) (bounds.height * 0.55), (int) (bounds.width * 0.09), (int) (bounds.height * 0.04));
+        PlayerMana.setBounds((int) (width * 0.93), (int) (height * 0.55), (int) (width * 0.09), (int) (height * 0.04));
         frame.add(PlayerMana);
         PlayerMana.setFont(new Font("Serif", Font.PLAIN, 20));
         PlayerMana.setForeground(Color.white);
@@ -88,62 +91,62 @@ public class Board {
 
         //Second Row
         JPanel rect1 = new JPanel();
-        draw(rect1, (int) (bounds.width * 0.18), (int) (bounds.height * 0.265), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect1, (int) (width * 0.18), (int) (height * 0.265), (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect2 = new JPanel();
-        draw(rect2, (int) (bounds.width * 0.315), (int) (bounds.height * 0.265), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect2, (int) (width * 0.315), (int) (height * 0.265), (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect3 = new JPanel();
-        draw(rect3, (int) (bounds.width * 0.45), (int) (bounds.height * 0.265), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect3, (int) (width * 0.45), (int) (height * 0.265), (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect4 = new JPanel();
-        draw(rect4, (int) (bounds.width * 0.585), (int) (bounds.height * 0.265), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect4, (int) (width * 0.585), (int) (height * 0.265), (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect5 = new JPanel();
-        draw(rect5, (int) (bounds.width * 0.72), (int) (bounds.height * 0.265), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect5, (int) (width * 0.72), (int) (height * 0.265), (int) (width * 0.1), (int) (height * 0.2));
 
         //3rd Row
         JPanel rect18 = new JPanel();
-        draw(rect18, (int) (bounds.width * 0.18), (int) (bounds.height * 0.53), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect18, (int) (width * 0.18), (int) (height * 0.53), (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect19 = new JPanel();
-        draw(rect19, (int) (bounds.width * 0.315), (int) (bounds.height * 0.53), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect19, (int) (width * 0.315), (int) (height * 0.53), (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect20 = new JPanel();
-        draw(rect20, (int) (bounds.width * 0.45), (int) (bounds.height * 0.53), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect20, (int) (width * 0.45), (int) (height * 0.53), (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect21 = new JPanel();
-        draw(rect21, (int) (bounds.width * 0.585), (int) (bounds.height * 0.53), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect21, (int) (width * 0.585), (int) (height * 0.53), (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect22 = new JPanel();
-        draw(rect22, (int) (bounds.width * 0.72), (int) (bounds.height * 0.53), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect22, (int) (width * 0.72), (int) (height * 0.53), (int) (width * 0.1), (int) (height * 0.2));
 
 
         //Top Row
         JPanel rect6 = new JPanel();
-        draw(rect6, (int) (bounds.width * 0.1125), 0, (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect6, (int) (width * 0.1125), 0, (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect7 = new JPanel();
-        draw(rect7, (int) (bounds.width * 0.2475), 0, (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect7, (int) (width * 0.2475), 0, (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect8 = new JPanel();
-        draw(rect8, (int) (bounds.width * 0.3825), 0, (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect8, (int) (width * 0.3825), 0, (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect9 = new JPanel();
-        draw(rect9, (int) (bounds.width * 0.5175), 0, (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect9, (int) (width * 0.5175), 0, (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect10 = new JPanel();
-        draw(rect10, (int) (bounds.width * 0.6525), 0, (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect10, (int) (width * 0.6525), 0, (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect11 = new JPanel();
-        draw(rect11, (int) (bounds.width * 0.7875), 0, (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect11, (int) (width * 0.7875), 0, (int) (width * 0.1), (int) (height * 0.2));
 
         //Bottom Row
         JPanel rect12 = new JPanel();
-        draw(rect12, (int) (bounds.width * 0.1125), (int) (bounds.height * 0.795), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect12, (int) (width * 0.1125), (int) (height * 0.795), (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect13 = new JPanel();
-        draw(rect13, (int) (bounds.width * 0.2475), (int) (bounds.height * 0.795), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect13, (int) (width * 0.2475), (int) (height * 0.795), (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect14 = new JPanel();
-        draw(rect14, (int) (bounds.width * 0.3825), (int) (bounds.height * 0.795), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect14, (int) (width * 0.3825), (int) (height * 0.795), (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect15 = new JPanel();
-        draw(rect15, (int) (bounds.width * 0.5175), (int) (bounds.height * 0.795), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect15, (int) (width * 0.5175), (int) (height * 0.795), (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect16 = new JPanel();
-        draw(rect16, (int) (bounds.width * 0.6525), (int) (bounds.height * 0.795), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect16, (int) (width * 0.6525), (int) (height * 0.795), (int) (width * 0.1), (int) (height * 0.2));
         JPanel rect17 = new JPanel();
-        draw(rect17, (int) (bounds.width * 0.7875), (int) (bounds.height * 0.795), (int) (bounds.width * 0.1), (int) (bounds.height * 0.2));
+        draw(rect17, (int) (width * 0.7875), (int) (height * 0.795), (int) (width * 0.1), (int) (height * 0.2));
 
 
         logLabel.setEditable(false);
         logLabel.setLineWrap(true);
         logLabel.setMargin(new Insets(0, 0, 0, 0));
-        logLabel.setBounds((int) (bounds.width * 0.04), (int) (bounds.height * 0.24), (int) (bounds.width * 0.12), (int) (bounds.height * 0.49));
+        logLabel.setBounds((int) (width * 0.04), (int) (height * 0.24), (int) (width * 0.12), (int) (height * 0.49));
         frame.add(logLabel);
         String x = "";
 
@@ -155,7 +158,7 @@ public class Board {
 
         endTurn = new JButton("End Turn");
         frame.add(endTurn);
-        endTurn.setBounds((int) (bounds.width * 0.85), (int) (bounds.height * 0.478), (int) (bounds.width * 0.09), (int) (bounds.height * 0.04));
+        endTurn.setBounds((int) (width * 0.85), (int) (height * 0.478), (int) (width * 0.09), (int) (height * 0.04));
         endTurn.setVisible(true);
 
         playerLabels[0] = rect18;
@@ -294,7 +297,7 @@ public class Board {
 
 
     public void Button(JPanel panel, JButton button) {
-        button.setPreferredSize(new Dimension((int) (bounds.width * 0.1), (int) (bounds.height * 0.2)));
+        button.setPreferredSize(new Dimension((int) (width * 0.1), (int) (height * 0.2)));
         panel.add(button);
 
         button.setOpaque(false);
@@ -355,7 +358,7 @@ public class Board {
 
     private void displayPlayerHand() {
         for (int i = 0; i < playerHand.size(); i++) {
-            buttonArray[i].setIcon(new ImageIcon(playerHand.get(i).getImage()));
+        	buttonArray[i].setIcon( new ImageIcon( getClass().getClassLoader().getResource(playerHand.get(i).getImage()) ) );
         }
 
         for (int i = playerHand.size(); i < buttonArray.length; i++) {
@@ -366,24 +369,24 @@ public class Board {
     private void displayEnemyHand() {
         for (int i = 0; i < enemyHand.size(); i++) {
             enemyHandLabels[i].removeAll();
-            enemyHandLabels[i].add(new JLabel(new ImageIcon(question.getImage())));
+            enemyHandLabels[i].add(new JLabel(new ImageIcon( getClass().getClassLoader().getResource(question.getImage()) )));
         }
 
         for (int i = enemyHand.size(); i < enemyHandLabels.length; i++) {
             enemyHandLabels[i].removeAll();
-            enemyHandLabels[i].add(new JLabel(new ImageIcon(blank.getImage())));
+            enemyHandLabels[i].add(new JLabel(new ImageIcon( getClass().getClassLoader().getResource(blank.getImage()) )));
         }
     }
 
     private void displayLabels(JPanel[] labelField, LinkedList<Card> battleField) {
         for (int i = 0; i < battleField.size(); i++) {
             labelField[i].removeAll();
-            labelField[i].add(new JLabel(new ImageIcon(battleField.get(i).getImage())));
+            labelField[i].add(new JLabel(new ImageIcon( getClass().getClassLoader().getResource(battleField.get(i).getImage()) )));
         }
 
         for (int i = battleField.size(); i < labelField.length; i++) {
             labelField[i].removeAll();
-            labelField[i].add(new JLabel(new ImageIcon(blank.getImage())));
+            labelField[i].add(new JLabel(new ImageIcon( getClass().getClassLoader().getResource(blank.getImage()) )));
         }
     }
 
@@ -526,23 +529,23 @@ public class Board {
 
 
         if (checkExodia()) {
-            ImageIcon zodiaicon = new ImageIcon("src/PNG/ExodiaWin.png");
+        	ImageIcon zodiaicon = new ImageIcon(getClass().getClassLoader().getResource("ExodiaWin.png"));
             Image imagezod = zodiaicon.getImage(); // transform it
-            Image newimg = imagezod.getScaledInstance( (int)(bounds.width*0.4), (int)(bounds.height*0.65),  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+            Image newimg = imagezod.getScaledInstance( (int)(width*0.4), (int)(height*0.65),  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
             zodiaicon = new ImageIcon(newimg); // reset image icon
 
             JOptionPane.showMessageDialog(null, "", "Exodia Win!", JOptionPane.INFORMATION_MESSAGE, zodiaicon);
         } else if (player.getHealth() <= 0) {
-            ImageIcon loseicon = new ImageIcon("src/PNG/Lose.png");
+        	ImageIcon loseicon = new ImageIcon(getClass().getClassLoader().getResource("Lose.png"));
             Image imagelose = loseicon.getImage(); // transform it
-            Image newimg2 = imagelose.getScaledInstance((int)(bounds.width*0.4), (int)(bounds.height*0.65),  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+            Image newimg2 = imagelose.getScaledInstance((int)(width*0.4), (int)(height*0.65),  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
             loseicon = new ImageIcon(newimg2); // reset image icon
 
             JOptionPane.showMessageDialog(null, "", "You Lose!", JOptionPane.INFORMATION_MESSAGE, loseicon);
         } else {
-            ImageIcon winicon = new ImageIcon("src/PNG/Win.png");
+        	ImageIcon winicon = new ImageIcon(getClass().getClassLoader().getResource("Win.png"));
             Image imagewin = winicon.getImage(); // transform it
-            Image newimg3 = imagewin.getScaledInstance((int)(bounds.width*0.4), (int)(bounds.height*0.65),  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+            Image newimg3 = imagewin.getScaledInstance((int)(width*0.4), (int)(height*0.65),  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
             winicon = new ImageIcon(newimg3); // reset image icon
 
             JOptionPane.showMessageDialog(null, "", "You Win!", JOptionPane.INFORMATION_MESSAGE, winicon);
@@ -580,6 +583,9 @@ public class Board {
 
         player.setMana(maxMana);
         enemy.setMana(maxMana);
+        
+        PlayerMana.setVisible(true);
+
 
         for (int i = 0; i < playerField.size(); i++) {
             playerGrave.add(playerField.get(i));
@@ -637,6 +643,8 @@ public class Board {
 
         player.setMana(maxMana);
         enemy.setMana(maxMana);
+        PlayerMana.setVisible(true);
+
 
         displayPlayerHand();
 
@@ -648,3 +656,4 @@ public class Board {
         new Menu();
     }
 }
+

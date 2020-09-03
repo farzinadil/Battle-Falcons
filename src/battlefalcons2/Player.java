@@ -1,6 +1,7 @@
 package battlefalcons2;
 
 /**
+ * Created by farzinadil on 9/2/20.
  */
 public class Player {
     private String playerName;

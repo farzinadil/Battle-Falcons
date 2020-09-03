@@ -1,7 +1,5 @@
 package battlefalcons2;
 
-/**
- */
 public class Card implements Comparable<Card> {
     private String cardName;
     private String image;

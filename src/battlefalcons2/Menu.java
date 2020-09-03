@@ -39,7 +39,7 @@ public class Menu {
         startmenu.add(instrutions);
 
 
-        ImageIcon logoic = new ImageIcon("src/PNG/Battle_Falcon-1.png_3.png");
+        ImageIcon logoic = new ImageIcon(getClass().getClassLoader().getResource("Battle_Falcon-1.png"));
         logo = new JLabel(logoic);
         startmenu.add(logo);
         logo.setBounds((int)(bounds.width*0.5*0.1875), 0, (int)(bounds.width*0.5*0.625), (int)(bounds.height*0.5*0.9804));
