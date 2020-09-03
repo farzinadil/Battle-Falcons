@@ -1,4 +1,5 @@
 # Battle-Falcons
+Download: https://roastmygame.com/game/battle-falcons
 
 Battle Falcons is a card-based strategy game where you play against a computer opponent. The two main resources of the game are health and mana. You start with 2 mana and it increments by 2 each turn. You use mana to play birds onto the field. The birds you play get placed to the leftmost tile on the field. Your birds will fight the opponent’s birds that are placed in front of them. The bird with the higher attack kills the opposing bird. If there is no bird opposing a bird, it will attack the opponent directly and deal damage to the opponent’s health. You start with 30 health and lose when it drops to zero. If the opponent’s health drops to zero before yours, you win. 
 
